@@ -9,7 +9,6 @@ export const loginSlice = createSlice({
     },
     reducers: {
         setInfo: (state, { payload }) => {
-            console.log(payload)
             state.data = payload
         }
     }

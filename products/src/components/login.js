@@ -9,8 +9,9 @@ const Login = () => {
     const dispatch = useDispatch();
     const handelSubmit = (e) => {
         e.preventDefault();
+        if (!user.current.value || !pass.current.value) return;
         dispatch(setInfo({ username: user.current.value, password: pass.current.value }))
-        navTo('/products')
+        navTo('/dashboard')
     }
     return (
         <div>
@@ -19,6 +20,7 @@ const Login = () => {
                 <input type="text" name="username" id="user" ref={user} />
                 <label>Password</label>
                 <input type="password" name="password" id="pass" ref={pass} />
+                <button onClick={() => navTo('/products/1')}>click</button>
                 <button type='submit'>login</button>
             </form>
         </div>
